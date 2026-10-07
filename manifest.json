@@ -1,0 +1,9 @@
+{
+  "name": "SciWrite Academy — Writing in the Sciences",
+  "short_name": "SciWrite Academy",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#0b1220",
+  "description": "A personal learning platform for Writing in the Sciences."
+}

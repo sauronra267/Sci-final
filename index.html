@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="description" content="A premium personal learning platform for Writing in the Sciences.">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<title>SciWrite Academy — Writing in the Sciences</title>
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Toggle navigation">☰</button>
+    <a class="brand" href="#home" onclick="home();return false;">
+      <span class="brand-mark">S</span>
+      <span class="brand-copy"><strong>SciWrite Academy</strong><small>Writing in the Sciences</small></span>
+    </a>
+    <div class="top-actions">
+      <button class="search-btn" id="searchBtn" aria-label="Search course"><span>⌕</span><span class="search-label">Search everything</span><kbd>/</kbd></button>
+      <button class="icon-btn" id="themeBtn" title="Toggle dark mode" aria-label="Toggle dark mode">☾</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <span>LEARNING</span>
+        <button class="icon-btn mobile-close" id="closeMenu" aria-label="Close navigation">×</button>
+      </div>
+      <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span><span>Dashboard</span></button>
+      <button class="nav-item" data-view="review"><span class="nav-icon">✦</span><span>Writing Review Lab</span></button>
+      <button class="nav-item" data-view="workspace"><span class="nav-icon">✎</span><span>My Research Workspace</span></button>
+      <button class="nav-item" data-view="reviewcenter"><span class="nav-icon">↻</span><span>Review Center</span></button>
+            <div class="side-label">START HERE</div>
+      <button class="nav-item" data-view="guide"><span class="nav-icon">?</span><span>How to use this site</span></button>
+      <div class="side-label">COURSE</div>
+      <div id="moduleNav"></div>
+      <div class="side-label">LIBRARY</div>
+      <button class="nav-item" data-view="extras"><span class="nav-icon">★</span><span>Extra & Demo Videos</span></button>
+      <button class="nav-item" data-view="resources"><span class="nav-icon">▣</span><span>Resources</span></button>
+      <button class="nav-item" data-view="bookmarks"><span class="nav-icon">☆</span><span>Bookmarks</span></button>
+      <button class="nav-item" data-view="stats"><span class="nav-icon">◔</span><span>My Progress</span></button>
+      <div class="side-bottom">
+        <button class="backup-btn" onclick="exportData()">⇩ Backup learning data</button>
+        <label class="backup-btn import-btn">⇧ Restore data<input type="file" id="importData" accept=".json" hidden></label>
+        <small>Progress, notes and practice stay on this device.</small>
+      </div>
+    </aside>
+
+    <main id="main"></main>
+  </div>
+</div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-head"><strong>Search your course</strong><button class="icon-btn" id="closeSearch">×</button></div>
+    <input id="searchInput" autocomplete="off" placeholder="Lessons, modules, notes, practice…">
+    <div class="search-hint">Press <kbd>Esc</kbd> to close</div>
+    <div id="searchResults"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="app.js"></script>
+</body>
+</html>
